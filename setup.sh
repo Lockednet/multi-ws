@@ -7,7 +7,7 @@ REPO="https://raw.githubusercontent.com/Lockednet/scriptvps/main/"
 
 ###
 BURIQ () {
-    curl -sS https://raw.githubusercontent.com/Andyvpn/izinvps/main/ip > /root/tmp
+    curl -sS https://raw.githubusercontent.com/Lockednet/izinvps/main/ip > /root/tmp
     data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
     for user in "${data[@]}"
     do
@@ -25,7 +25,7 @@ BURIQ () {
 }
 # https://raw.githubusercontent.com/MyRidwan/izinvps/ipuk/ip 
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS https://raw.githubusercontent.com/Andyvpn/izinvps/main/ip | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS https://raw.githubusercontent.com/Lockednet/izinvps/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 
@@ -42,7 +42,7 @@ fi
 
 PERMISSION () {
     MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/Andyvpn/izinvps/main/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/Lockednet/izinvps/main/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
     Bloman
     else
@@ -265,13 +265,13 @@ wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/ssh/ssh-vpn.sh &&
 echo -e "$green[INFO]$NC Install XRAY!"
 sleep 2
 clear
-wget https://raw.githubusercontent.com/Andyvpn/multi-ws/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
-wget https://raw.githubusercontent.com/Andyvpn/multi-ws/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
-wget https://raw.githubusercontent.com/Andyvpn/multi-ws/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
-wget https://raw.githubusercontent.com/Andyvpn/multi-ws/main/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
+wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
 clear
 ### Pasang SlowDNS
 function install_slowdns(){
@@ -285,7 +285,7 @@ function install_slowdns(){
 clear
 echo -e "$green[INFO]$NC Download Extra Menu"
 sleep 2
-wget https://raw.githubusercontent.com/Andyvpn/multi-ws/main/update/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/Lockednet/multi-ws/main/update/update.sh && chmod +x update.sh && ./update.sh
 clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
@@ -314,7 +314,7 @@ if [ ! -f "/etc/log-create-user.log" ]; then
 echo "Log All Account " > /etc/log-create-user.log
 fi
 history -c
-serverV=$( curl -sS https://raw.githubusercontent.com/Andyvpn/multi-ws/main/version  )
+serverV=$( curl -sS https://raw.githubusercontent.com/Lockednet/multi-ws/main/version  )
 echo $serverV > /opt/.ver
 aureb=$(cat /home/re_otm)
 b=11
